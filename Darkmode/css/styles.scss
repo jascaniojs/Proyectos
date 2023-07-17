@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+:root {
+    --gray10: #e6e6e6f5;
+    --gray20: #ffffff20;
+    --gray30: #ffffff57;
+    --gray40: #d1d5db4d;
+    --gray50: #293c5f57;
+    --yellow20: #fffc83;
+    --salmon30: #de7571;
+    --salmon40: #be4e48;
+    --darkblue: #282634;
+    --darkmode1: #0487d9be;
+    --darkmode2: #010d26;
+    --darkmode3: #021f59;
+    --darkmode4: #000229;
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    font-family: var(--primary-font);
+    margin: 0;
+    
+}
+
+.bg-light {
+    background: linear-gradient(45deg,var(--darkblue),var(--salmon40),var(--salmon30),var(--yellow20),var(--gray10));
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center;
+}
+
+.bg-dark{
+    background: linear-gradient(45deg,var(--darkmode4),var(--darkmode3),var(--darkmode2),var(--darkmode1),var(--darkblue));
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center;
+    color: var(--gray10)
+}
+
+.container {
+    font-weight: bold;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 30rem;
+
+    .estado {
+        margin: 1rem;
+        width: 5rem;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 4rem;
+        align-self: flex-end;
+        padding: 0.25rem;
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        background-color: var(--gray30);
+        border-radius: 12px;
+        border: 1px solid var(--gray40);
+
+        button{
+            border: none;
+            border-radius: 2rem;
+            padding: 0.2rem;
+            background: none;
+            justify-content: stretch;
+
+            :hover{
+                cursor: pointer;
+                
+            }
+
+            :active{
+                width: 1.3rem;
+            }
+        }
+    }
+
+    .form {
+        margin: 1rem;
+        border: 1px solid yellow;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        background-color: var(--gray30);
+        border-radius: 12px;
+        border: 1px solid var(--gray40);
+
+        h2{
+            
+            margin: 0;
+        }
+
+        .form-item{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            label{
+                cursor: pointer;
+            }
+
+            input {
+                border: none;
+                height: 1.5rem;
+                border-radius: .5rem;
+                padding-inline: 1rem;
+                padding-block: 0.5rem;
+                font-family: var(--secondary-font);
+                font-weight: 600;
+            }
+
+            input:focus{
+                outline: none;
+            }
+        }
+
+        .btn-submit{
+            margin-top: 1rem;
+
+            .btn {
+                width: 100%;
+                height: 3rem;
+                cursor: pointer;
+                border: none;
+                border-radius: 0.5rem;
+                background-color: var(--darkblue);
+                color: white;
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+        }
+
+    }
+
+    .dark{
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        background-color: var(--gray50);
+        border-radius: 12px;
+        border: 1px solid var(--gray20);
+    }
+
+    .form.dark{
+        .btn{
+            background-color: var(--darkmode1);
+        }
+    }
+}
+
+@media (max-width: 576px){
+
+    body {
+        font-size: 12px;
+    }
+
+    .form{
+        .form-item{
+            input{
+                line-height: 1rem;
+                padding: 0rem;
+            }
+        }
+    }
+}
