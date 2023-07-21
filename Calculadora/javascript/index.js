@@ -1,5 +1,4 @@
 const display = document.querySelector(".result");
-const valor = document.querySelectorAll(".btn-input")
 
 let currentValue = 0;
 
@@ -11,9 +10,9 @@ function clearDisplay() {
 }
 
 function addValue(valor) {
-    if (currentValue === 0 || currentValue === "Error"){
+    if (currentValue === 0 || currentValue === "Error" ){
         currentValue = valor;
-    }else{
+    }else {
         currentValue += valor;
     }
   display.textContent = currentValue;
@@ -30,20 +29,20 @@ function resultTotal() {
     } catch (error) {
       currentValue = "Error";
     }
-    display.textContent = currentValue;
+      display.textContent = currentValue;
+    
+    
   }
 
-valor.forEach((element) => {
-  element.addEventListener("click", () => {
+document.querySelector(".btn-container").addEventListener("click", (event) => {
+  const element = event.target;
+  if (element.classList.contains("btn-input")) {
     if (element.textContent === "C") {
       clearDisplay();
     }else if (element.textContent === "="){
         resultTotal();
     } else {
-      addValue(element.textContent);
+        addValue(element.textContent);
     }
-  });
+  }
 });
-
-
-
